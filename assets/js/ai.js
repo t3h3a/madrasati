@@ -5,54 +5,78 @@ const userInput = document.getElementById("userInput");
 
 // تمرير الشاشة تلقائياً عند التركيز على حقل الإدخال (للموبايل)
 if (userInput) {
-    // عند التركيز على حقل الإدخال
-    userInput.addEventListener('focus', function() {
-        // انتظر حتى يظهر الكيبورد ثم مرر الشاشة
-        setTimeout(() => {
-            // استخدام visualViewport إذا كان متاحاً (للكيبورد)
-            if (window.visualViewport) {
-                const inputArea = document.querySelector('.chat-input-area');
-                if (inputArea) {
-                    // حساب المسافة المطلوبة ليكون حقل الإدخال فوق الكيبورد
-                    const viewportHeight = window.visualViewport.height;
-                    const inputRect = inputArea.getBoundingClientRect();
-                    const inputBottom = inputRect.bottom;
-                    
-                    // إذا كان حقل الإدخال تحت الكيبورد، مرر الشاشة
-                    if (inputBottom > viewportHeight) {
-                        const scrollAmount = inputBottom - viewportHeight + 20; // 20px مسافة إضافية
-                        window.scrollBy({ top: scrollAmount, behavior: 'smooth' });
-                    }
-                }
-            } else {
-                // طريقة بديلة للأجهزة التي لا تدعم visualViewport
-                const inputArea = document.querySelector('.chat-input-area');
-                if (inputArea) {
-                    inputArea.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    const chatContainer = document.querySelector('.ai-chat-container');
+    const inputArea = document.querySelector('.chat-input-area');
+    const chatBox = document.getElementById('chatBox');
+    
+    // دالة لضبط موضع منطقة الإدخال فوق الكيبورد
+    function adjustInputPosition() {
+        if (!inputArea || !chatContainer) return;
+        
+        // استخدام visualViewport إذا كان متاحاً (للكيبورد)
+        if (window.visualViewport) {
+            const viewportHeight = window.visualViewport.height;
+            const inputRect = inputArea.getBoundingClientRect();
+            const inputTop = inputRect.top;
+            const inputBottom = inputRect.bottom;
+            
+            // إذا كان حقل الإدخال تحت الكيبورد أو قريب جداً منه
+            if (inputBottom > viewportHeight - 10) {
+                const scrollAmount = inputBottom - viewportHeight + 30; // 30px مسافة إضافية
+                // تمرير صندوق الرسائل بدلاً من الصفحة
+                if (chatBox) {
+                    chatBox.scrollTop += scrollAmount;
                 }
             }
-        }, 500); // زيادة الوقت لانتظار ظهور الكيبورد
+        } else {
+            // طريقة بديلة للأجهزة التي لا تدعم visualViewport
+            if (chatBox) {
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    }
+    
+    // عند التركيز على حقل الإدخال
+    userInput.addEventListener('focus', function() {
+        // انتظر حتى يظهر الكيبورد ثم اضبط الموضع
+        setTimeout(() => {
+            adjustInputPosition();
+        }, 300);
+        
+        // أيضاً بعد ظهور الكيبورد مباشرة
+        setTimeout(() => {
+            adjustInputPosition();
+        }, 600);
     });
 
-    // أيضاً عند الكتابة (للتأكد من أن الحقل مرئي)
+    // عند الكتابة (للتأكد من أن الحقل مرئي)
     userInput.addEventListener('input', function() {
         if (document.activeElement === userInput) {
             setTimeout(() => {
-                if (window.visualViewport) {
-                    const inputArea = document.querySelector('.chat-input-area');
-                    if (inputArea) {
-                        const viewportHeight = window.visualViewport.height;
-                        const inputRect = inputArea.getBoundingClientRect();
-                        const inputBottom = inputRect.bottom;
-                        
-                        if (inputBottom > viewportHeight) {
-                            const scrollAmount = inputBottom - viewportHeight + 20;
-                            window.scrollBy({ top: scrollAmount, behavior: 'smooth' });
-                        }
-                    }
-                }
-            }, 100);
+                adjustInputPosition();
+            }, 50);
         }
+    });
+    
+    // مراقبة تغييرات visualViewport (للكيبورد)
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', function() {
+            if (document.activeElement === userInput) {
+                setTimeout(() => {
+                    adjustInputPosition();
+                }, 100);
+            }
+        });
+    }
+    
+    // عند فقدان التركيز، إرجاع التمرير للوضع الطبيعي
+    userInput.addEventListener('blur', function() {
+        // إرجاع تلقائي للتمرير بعد إخفاء الكيبورد
+        setTimeout(() => {
+            if (chatBox) {
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }, 300);
     });
 }
 
