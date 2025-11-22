@@ -347,12 +347,12 @@ body {
 #userInput {
     flex: 1;
     width: 100%;
-    padding: 14px 50px 14px 18px;   /* مسافة لزر الإرسال على اليمين */
+    padding: 16px 54px 16px 20px;   /* مسافة أكبر لزر الإرسال على اليمين */
     border-radius: 999px;
     border: 1px solid rgba(148, 163, 184, 0.45);
     background: rgba(15, 23, 42, 0.9);
     color: var(--text-main);
-    font-size: 0.96rem;
+    font-size: 1rem; /* تكبير الخط قليلاً */
     outline: none;
     font-family: "Tajawal", system-ui, sans-serif;
     transition:
@@ -471,15 +471,15 @@ body:has(.ai-chat-container) .main-footer {
     }
 
     #userInput {
-        font-size: 0.9rem;
-        padding: 12px 46px 12px 14px;
+        font-size: 16px; /* 16px لمنع zoom تلقائي في iOS */
+        padding: 14px 50px 14px 16px; /* تكبير قليلاً */
     }
 
     .send-btn {
-        width: 34px;
-        height: 34px;
-        right: 6px;
-        font-size: 0.9rem;
+        width: 36px;
+        height: 36px;
+        right: 7px;
+        font-size: 0.95rem;
     }
 }
 
@@ -516,14 +516,15 @@ body:has(.ai-chat-container) .main-footer {
     }
 
     #userInput {
-        padding: 11px 44px 11px 12px;
+        font-size: 16px; /* 16px لمنع zoom تلقائي في iOS */
+        padding: 14px 48px 14px 14px; /* تكبير قليلاً */
     }
 
     .send-btn {
-        right: 5px;
-        width: 32px;
-        height: 32px;
-        font-size: 0.85rem;
+        right: 6px;
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
     }
 }
 
