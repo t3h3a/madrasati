@@ -278,17 +278,22 @@ body {
    إدخال النص
 ========================= */
 .chat-input-area {
-    display: flex;
-    gap: 12px;
     padding: 18px 22px;
     background: rgba(15,23,42,0.95);
     border-top: 1px solid rgba(148,163,184,0.2);
     margin: 0;
 }
 
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 #userInput {
     flex: 1;
-    padding: 14px 20px;
+    padding: 14px 50px 14px 20px;
     border-radius: 25px;
     border: 1px solid rgba(148,163,184,0.4);
     background: rgba(15,23,42,0.8);
@@ -296,6 +301,7 @@ body {
     font-size: 1rem;
     outline: none;
     font-family: "Tajawal", sans-serif;
+    width: 100%;
 }
 
 #userInput:focus {
@@ -304,25 +310,35 @@ body {
 }
 
 /* زر الإرسال */
-.chat-input-area button {
-    padding: 12px 20px;
-    border-radius: 999px;
+.send-btn {
+    position: absolute;
+    left: 8px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), #fb923c);
     border: none;
     color: white;
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 16px 40px rgba(248,113,22,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(248,113,22,0.5);
+    transition: all 0.2s ease;
 }
 
-.chat-input-area button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 50px rgba(248,113,22,0.9);
+.send-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(248,113,22,0.7);
 }
 
-.chat-input-area button:active {
-    transform: translateY(0);
+.send-btn:active {
+    transform: scale(0.95);
+}
+
+.send-btn i {
+    margin: 0;
 }
 
 /* =========================
@@ -376,16 +392,21 @@ body {
     
     .chat-input-area {
         padding: 14px 16px;
-        gap: 10px;
+    }
+    
+    .input-wrapper {
+        gap: 0;
     }
     
     #userInput {
-        padding: 12px 16px;
+        padding: 12px 45px 12px 16px;
         font-size: 0.95rem;
     }
     
-    .chat-input-area button {
-        padding: 12px 18px;
+    .send-btn {
+        width: 36px;
+        height: 36px;
+        left: 6px;
         font-size: 0.9rem;
     }
 }
@@ -423,21 +444,18 @@ body {
     
     .chat-input-area {
         padding: 12px 14px;
-        gap: 8px;
     }
     
     #userInput {
-        padding: 11px 14px;
+        padding: 11px 42px 11px 14px;
         font-size: 0.9rem;
     }
     
-    .chat-input-area button {
-        padding: 11px 16px;
+    .send-btn {
+        width: 34px;
+        height: 34px;
+        left: 5px;
         font-size: 0.85rem;
-    }
-    
-    .chat-input-area button i {
-        display: none;
     }
 }
 
