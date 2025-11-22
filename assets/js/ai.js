@@ -14,7 +14,10 @@ function addMessage(text, sender = "bot") {
     wrapper.textContent = text;
 
     chatBox.appendChild(wrapper);
-    chatBox.scrollTop = chatBox.scrollHeight;
+    // التمرير تلقائياً للأسفل عند إضافة رسالة جديدة
+    setTimeout(() => {
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }, 100);
 }
 
 
