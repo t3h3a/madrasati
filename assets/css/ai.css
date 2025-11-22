@@ -336,13 +336,14 @@ body {
 ========================= */
 
 .chat-input-area {
-    padding: 16px 20px 18px;
+    padding: 22px 24px 24px;
     background: rgba(15, 23, 42, 0.98);
-    border-top: 1px solid rgba(148, 163, 184, 0.35);
+    border-top: 2px solid rgba(148, 163, 184, 0.5);
     flex-shrink: 0; /* منع التصغير */
     position: relative;
     z-index: 100;
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3); /* ظل لزيادة الوضوح */
+    box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.5); /* ظل أقوى لزيادة الوضوح */
+    min-height: 90px; /* ارتفاع أدنى لضمان الرؤية */
 }
 
 .input-wrapper {
@@ -356,12 +357,13 @@ body {
 #userInput {
     flex: 1;
     width: 100%;
-    padding: 16px 54px 16px 20px;   /* مسافة أكبر لزر الإرسال على اليمين */
+    padding: 20px 60px 20px 24px;   /* مسافة أكبر لزر الإرسال على اليمين */
     border-radius: 999px;
-    border: 2px solid rgba(148, 163, 184, 0.5); /* زيادة سماكة الحدود للوضوح */
-    background: rgba(30, 41, 59, 0.95); /* خلفية أفتح قليلاً للوضوح */
+    border: 3px solid rgba(148, 163, 184, 0.7); /* زيادة سماكة الحدود للوضوح */
+    background: rgba(30, 41, 59, 1); /* خلفية أفتح للوضوح */
     color: var(--text-main);
-    font-size: 16px; /* 16px لمنع zoom تلقائي في iOS */
+    font-size: 17px; /* حجم خط أكبر قليلاً */
+    min-height: 56px; /* ارتفاع أدنى للحقل */
     outline: none;
     font-family: "Tajawal", system-ui, sans-serif;
     transition:
@@ -389,17 +391,17 @@ body {
 /* زر الإرسال – على اليمين مثل واتساب */
 .send-btn {
     position: absolute;
-    right: 8px;                 /* <<< هنا الجهة */
-    width: 42px; /* زيادة الحجم للوضوح */
-    height: 42px;
+    right: 10px;                 /* <<< هنا الجهة */
+    width: 48px; /* زيادة الحجم للوضوح */
+    height: 48px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.2); /* حد واضح */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* حد أوضح */
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--accent), #fb923c);
     color: #ffffff;
-    font-size: 1.1rem; /* زيادة حجم الأيقونة */
+    font-size: 1.2rem; /* زيادة حجم الأيقونة */
     cursor: pointer;
     box-shadow: 
         0 4px 12px rgba(248, 113, 22, 0.6),
@@ -496,21 +498,23 @@ body:has(.ai-chat-container) .main-footer {
     }
 
     .chat-input-area {
-        padding: 14px 16px 16px; /* زيادة المسافة للوضوح */
-        padding-bottom: max(16px, env(safe-area-inset-bottom)); /* دعم safe area في iOS */
+        padding: 18px 20px 20px; /* زيادة المسافة للوضوح */
+        padding-bottom: max(20px, env(safe-area-inset-bottom)); /* دعم safe area في iOS */
+        min-height: 85px; /* ارتفاع أدنى على الموبايل */
     }
 
     #userInput {
-        font-size: 16px; /* 16px لمنع zoom تلقائي في iOS */
-        padding: 14px 52px 14px 16px; /* مسافة أكبر لزر الإرسال */
-        border-width: 2px;
+        font-size: 17px; /* حجم خط أكبر */
+        padding: 18px 58px 18px 20px; /* مسافة أكبر لزر الإرسال */
+        border-width: 3px;
+        min-height: 54px; /* ارتفاع أدنى */
     }
 
     .send-btn {
-        width: 40px; /* حجم أكبر للوضوح */
-        height: 40px;
-        right: 8px;
-        font-size: 1.05rem;
+        width: 46px; /* حجم أكبر للوضوح */
+        height: 46px;
+        right: 10px;
+        font-size: 1.15rem;
         border-width: 2px;
     }
 }
@@ -544,21 +548,23 @@ body:has(.ai-chat-container) .main-footer {
     }
 
     .chat-input-area {
-        padding: 12px 14px 14px;
-        padding-bottom: max(14px, env(safe-area-inset-bottom)); /* دعم safe area في iOS */
+        padding: 16px 18px 18px;
+        padding-bottom: max(18px, env(safe-area-inset-bottom)); /* دعم safe area في iOS */
+        min-height: 80px; /* ارتفاع أدنى على الشاشات الصغيرة */
     }
 
     #userInput {
-        font-size: 16px; /* 16px لمنع zoom تلقائي في iOS */
-        padding: 14px 50px 14px 14px; /* مسافة كافية لزر الإرسال */
-        border-width: 2px;
+        font-size: 17px; /* حجم خط أكبر */
+        padding: 16px 56px 16px 18px; /* مسافة كافية لزر الإرسال */
+        border-width: 3px;
+        min-height: 52px; /* ارتفاع أدنى */
     }
 
     .send-btn {
-        right: 7px;
-        width: 38px; /* حجم مناسب للوضوح */
-        height: 38px;
-        font-size: 1rem;
+        right: 9px;
+        width: 44px; /* حجم مناسب للوضوح */
+        height: 44px;
+        font-size: 1.1rem;
         border-width: 2px;
     }
 }
