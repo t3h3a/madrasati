@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>معرض الإنجازات - مدرستي</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/gallery.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+<body>
+
+<!-- ========== الهيدر ========== -->
+<header class="main-header">
+    <div class="container header-inner">
+        <div class="brand-area">
+            <div class="school-logo"><img src="assets/images/school-logo.png" alt=""></div>
+            <div class="brand-text">
+                <span class="brand-top">مدرستي</span>
+                <span class="brand-sub">مدرسة وادي موسى الثانوية الشاملة للبنين</span>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="gallery.html" class="active">معرض الإنجازات</a>
+            <a href="btec.html">نظام BTEC</a>
+            <a href="ai.html">المساعد الذكي</a>
+        </nav>
+
+        <div class="pearson-badge">
+            <img src="assets/images/pearson-logo.png" alt="">
+            <span>BTEC Pearson</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- ========== محتوى المعرض ========== -->
+<section class="gallery-section">
+    <div class="container">
+        <h1 class="gallery-title">معرض <span>الإنجازات</span></h1>
+        <p class="gallery-desc">
+            بتوجيه وتقدير من مدير المدرسة الأستاذ <strong>عبد الله المشاعلة</strong>  
+            تم تكريم فريق المدرسة <strong>RoboChamps</strong> لمشاركتهم الفعّالة في بطولة الروبوت WRO.  
+            وقد تم اعتمادهم رسميًا لتمثيل الأردن عالميًا.
+        </p>
+
+        <div class="gallery-grid">
+
+            <!-- بطاقة 1 -->
+            <div class="gallery-card">
+                <div class="gallery-img" style="background-image: url('assets/images/robo1.jpg');"></div>
+                <div class="gallery-info">
+                    <h3>تكريم فريق RoboChamps</h3>
+                    <p>لحصولهم على أداء مميّز ومشاركة مشرّفة في بطولة WRO تحت رعاية الأمير رعد بن فيصل.</p>
+                </div>
+            </div>
+
+            <!-- بطاقة 2 -->
+            <div class="gallery-card">
+                <div class="gallery-img" style="background-image: url('assets/images/robo2.jpg');"></div>
+                <div class="gallery-info">
+                    <h3>طلاب مبدعون في الروبوت</h3>
+                    <p>الطالبان محمد الجوارنة وكريم الحسنات والمشرف المعلم جودت النوافلة.</p>
+                </div>
+            </div>
+
+            <!-- بطاقة 3 -->
+            <div class="gallery-card">
+                <div class="gallery-img" style="background-image: url('assets/images/robo3.jpg');"></div>
+                <div class="gallery-info">
+                    <h3>إنجازات عالمية</h3>
+                    <p>اعتماد رسمي للفريق لتمثيل الأردن في البطولة العالمية للروبوت.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== الفوتر ========== -->
+<footer class="main-footer">
+    <div class="container footer-inner">
+        <div>© <span id="year"></span> مدرسة وادي موسى الثانوية الشاملة للبنين</div>
+        <div class="footer-dev">تطوير بواسطة <strong>المهندس ثائر محمد السلامين</strong></div>
+    </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/dark-mode.js"></script>
+
+</body>
+</html>

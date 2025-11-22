@@ -1,0 +1,21 @@
+/* يمنع أي صورة من التكبير العشوائي */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* شعار المدرسة */
+.school-logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #2563eb;
+}
+
+/* شعار بيرسون */
+.pearson-badge img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}

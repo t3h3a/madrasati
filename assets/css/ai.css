@@ -1,0 +1,287 @@
+/* =========================
+   إعدادات عامة للصفحة
+========================= */
+:root {
+    --bg-main: #020617;            
+    --bg-card: rgba(15, 23, 42, 0.92);
+    --accent: #f97316;            
+    --accent-soft: rgba(249, 115, 22, 0.15);
+    --primary: #3b82f6;           
+    --primary-soft: rgba(59, 130, 246, 0.12);
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+    --shadow-strong: 0 24px 70px rgba(15, 23, 42, 0.9);
+    --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.7);
+    --transition-fast: 0.25s ease;
+    --transition-slow: 0.45s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    font-family: "Tajawal", sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* تعديل الهيدر ليتناسب مع الخلفية الداكنة */
+.main-header {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.main-header .brand-top,
+.main-header .brand-sub {
+    color: #e5e7eb !important;
+}
+
+.main-nav a {
+    color: #cbd5e1 !important;
+}
+
+.main-nav a:hover {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #3b82f6 !important;
+}
+
+.main-nav a.active {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+.nav-toggle {
+    color: #e5e7eb !important;
+}
+
+/* =========================
+   خلفية نيون مستقبلية
+========================= */
+.ai-bg {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.2), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(249, 115, 22, 0.22), transparent 55%),
+        radial-gradient(circle at 60% 10%, rgba(129, 140, 248, 0.18), transparent 55%),
+        radial-gradient(circle at 0% 100%, rgba(14, 165, 233, 0.22), transparent 60%),
+        #020617;
+    z-index: -2;
+}
+
+.ai-bg::before,
+.ai-bg::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 40%;
+    filter: blur(60px);
+    opacity: 0.45;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(59,130,246,0.75), transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(249,115,22,0.9), transparent 60%);
+    animation: float-bg 18s infinite alternate ease-in-out;
+}
+
+.ai-bg::before {
+    top: -120px;
+    right: -160px;
+}
+
+.ai-bg::after {
+    bottom: -140px;
+    left: -180px;
+    animation-delay: 4s;
+}
+
+@keyframes float-bg {
+    0% { transform: translate(0,0) rotate(0deg); }
+    50% { transform: translate(40px,-40px) rotate(10deg); }
+    100% { transform: translate(-40px,30px) rotate(-8deg); }
+}
+
+/* =========================
+   الهيدر
+========================= */
+.ai-header {
+    padding: 120px 20px 15px;
+    text-align: center;
+}
+
+.ai-header h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+    font-weight: 800;
+}
+
+.ai-header h1 span { color: var(--accent); }
+
+.ai-header p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* =========================
+   صندوق الشات
+========================= */
+.ai-chat-container {
+    width: min(900px, 100% - 30px);
+    margin: 0 auto 28px;
+    background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.9));
+    border-radius: 25px;
+    padding: 22px;
+    box-shadow: var(--shadow-strong);
+    border: 1px solid rgba(148,163,184,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-box {
+    height: 430px;
+    padding: 18px;
+    border-radius: var(--radius-lg);
+    background: radial-gradient(circle at top, rgba(15,23,42,0.6), rgba(15,23,42,0.92));
+    overflow-y: auto;
+    box-shadow: var(--shadow-soft);
+}
+
+/* سكرول أنيق */
+.chat-box::-webkit-scrollbar { width: 7px; }
+.chat-box::-webkit-scrollbar-thumb {
+    background: rgba(148,163,184,0.55);
+    border-radius: 999px;
+}
+
+/* =========================
+   فقاعات الرسائل
+========================= */
+.message {
+    max-width: 78%;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 18px;
+    font-size: 1rem;
+    line-height: 1.7;
+    animation: msg-pop 0.25s ease-out;
+}
+
+/* بوت → يمين */
+.message.bot {
+    background: linear-gradient(135deg, var(--primary), #6366f1);
+    margin-right: 0;
+    margin-left: auto;
+    color: white;
+    border-bottom-right-radius: 4px;
+    box-shadow: 0 12px 30px rgba(37,99,235,0.55);
+}
+
+/* مستخدم → يسار */
+.message.user {
+    background: linear-gradient(135deg, #0f172a, #020617);
+    border: 1px solid rgba(148,163,184,0.4);
+    margin-left: 0;
+    margin-right: auto;
+    color: #e5e7eb;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 10px 26px rgba(15,23,42,0.9);
+}
+
+@keyframes msg-pop {
+    0% { transform: translateY(10px) scale(0.97); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* =========================
+   إدخال النص
+========================= */
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,0.5);
+    background: rgba(15,23,42,0.9);
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+}
+
+#userInput:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px rgba(249,115,22,0.7);
+}
+
+/* زر الإرسال */
+.chat-input-area button {
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--accent), #fb923c);
+    border: none;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 16px 40px rgba(248,113,22,0.7);
+}
+
+.chat-input-area button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 50px rgba(248,113,22,0.9);
+}
+
+.chat-input-area button:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   فوتر
+========================= */
+.ai-footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.ai-footer strong { color: var(--accent); }
+
+/* =========================
+   موبايل
+========================= */
+@media (max-width: 600px) {
+    .ai-header {
+        padding: 100px 20px 15px;
+    }
+    .ai-chat-container { padding: 16px; }
+    .chat-box { height: 380px; }
+    .message { max-width: 90%; font-size: 0.92rem; }
+    #userInput { font-size: 0.9rem; }
+}

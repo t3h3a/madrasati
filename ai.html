@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>المساعد الذكي – مدرستي</title>
+
+    <!-- الخط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- أيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- ملفات CSS -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/ai.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+
+<body>
+
+    <!-- ===================== الهيدر ===================== -->
+    <header class="main-header">
+        <div class="container header-inner">
+            <div class="brand-area">
+                <div class="school-logo">
+                    <img src="assets/images/school-logo.png" alt="شعار المدرسة">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-top">مدرستي</span>
+                    <span class="brand-sub">مدرسة وادي موسى الثانوية الشاملة للبنين</span>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="gallery.html">معرض الإنجازات</a>
+                <a href="btec.html">نظام BTEC</a>
+                <a href="ai.html" class="active">المساعد الذكي</a>
+            </nav>
+
+            <div class="pearson-badge" onclick="location.href='btec.html'">
+                <img src="assets/images/pearson-logo.png" alt="Pearson">
+                <span>BTEC Pearson</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+                    <i class="fa-solid fa-sun"></i>
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ⚡ خلفية متحركة مستقبلية -->
+    <div class="ai-bg"></div>
+
+    <!-- ⚡ محتوى الصفحة -->
+    <div class="ai-header">
+        <h1>🤖 المساعد الذكي لمدرسة وادي موسى الثانوية</h1>
+        <p>أنا هنا لخدمتك… اسألني أي شيء تريده ✨</p>
+    </div>
+
+    <!-- ⚡ صندوق الشات -->
+    <div class="ai-chat-container">
+
+        <!-- شاشة الشات الزجاجية -->
+        <div class="chat-box" id="chatBox">
+            <!-- الرسائل ستظهر هنا عبر جافا -->
+        </div>
+
+        <!-- إدخال الرسالة -->
+        <form id="chatForm" class="chat-input-area">
+            <input type="text" id="userInput" placeholder="اكتب سؤالك هنا..." autocomplete="off" required>
+            <button type="submit">
+                <i class="fa-solid fa-paper-plane"></i> إرسال
+            </button>
+        </form>
+    </div>
+
+    <!-- ===================== الفوتر ===================== -->
+    <footer class="main-footer">
+        <div class="container footer-inner">
+            <div>© <span id="year"></span> مدرسة وادي موسى الثانوية الشاملة للبنين</div>
+            <div class="footer-dev">تطوير بواسطة <strong>المهندس ثائر محمد السلامين</strong></div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dark-mode.js"></script>
+    <script src="assets/js/ai.js"></script>
+</body>
+</html>

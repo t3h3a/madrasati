@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نظام BTEC - معلومات شاملة</title>
+
+    <!-- الخط والأيقونات -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- ملف التنسيق -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/btec.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-inner">
+    
+            <div class="brand-area">
+                <div class="school-logo">
+                    <img src="assets/images/school-logo.png" alt="شعار المدرسة">
+                </div>
+                <div class="brand-text">
+                    <span class="brand-top">مدرستي</span>
+                    <span class="brand-sub">مدرسة وادي موسى الثانوية الشاملة للبنين</span>
+                </div>
+            </div>
+    
+            <nav class="main-nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="gallery.html">معرض الإنجازات</a>
+                <a href="btec.html" class="active">نظام BTEC</a>
+                <a href="ai.html">المساعد الذكي</a>
+            </nav>
+    
+            <div class="pearson-badge">
+                <img src="assets/images/pearson-logo.png" alt="Pearson">
+                <span>BTEC Pearson</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+                    <i class="fa-solid fa-sun"></i>
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+    
+        </div>
+    </header>
+    
+<!-- ====================== الهيرو ======================= -->
+<header class="btec-hero">
+    <div class="btec-hero-slider">
+        <div class="btec-slide active" style="background-image: url('assets/background/hero3.jpg');"></div>
+        <div class="btec-slide" style="background-image: url('assets/background/hero4.jpg');"></div>
+    </div>
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>تعرف على نظام <span>BTEC</span></h1>
+        <p>
+            نظام التعليم البريطاني المهني الأكثر اعتماداً عالمياً، ويعتمد على المهارات العملية
+            والتطبيقات الواقعية وليس على الحفظ التقليدي.
+        </p>
+        <a href="#details" class="hero-btn">
+            إبدأ الاستكشاف <i class="fa-solid fa-arrow-down"></i>
+        </a>
+    </div>
+</header>
+
+<!-- ====================== تعريف النظام ======================= -->
+<section class="section" id="details">
+    <h2 class="section-title">ما هو <span>BTEC</span> ؟</h2>
+
+    <p class="section-desc">
+        كلمة BTEC هي اختصار لـ <strong>Business and Technology Education Council</strong>،
+        وهو نظام تعليمي مهني بريطاني يعتمد على المهارات العملية والتقييم المستمر.
+        يتم تدريسه في أكثر من <strong>100 دولة</strong> حول العالم ويُعتبر واحداً
+        من أشهر البرامج المهنية التي تؤهل الطلبة للجامعة أو سوق العمل.
+    </p>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>نظام عالمي</h3>
+            <p>يتم تدريسه في مئات المؤسسات، ومعتمد دولياً للالتحاق بالجامعات أو العمل.</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fa-solid fa-gears"></i>
+            <h3>تعليم قائم على المهارات</h3>
+            <p>لا يعتمد على الحفظ بل على المشاريع، المهام العملية، والعروض التقديمية.</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fa-solid fa-file-circle-check"></i>
+            <h3>تقييم مستمر</h3>
+            <p>يتم تقييم الطالب عبر مهام عملية وتطبيقية طوال العام بدون امتحان نهائي.</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fa-solid fa-briefcase"></i>
+            <h3>جاهزية لسوق العمل</h3>
+            <p>يُكسب الطالب مهارات عملية مباشرة مطلوبة في الوظائف الحديثة.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ====================== التخصصات ======================= -->
+<section class="section">
+    <h2 class="section-title">تخصصات <span>BTEC</span></h2>
+
+    <div class="majors-grid">
+
+        <div class="major-card">
+            <i class="fa-solid fa-computer"></i>
+            <h3>تكنولوجيا المعلومات IT</h3>
+            <p>
+                يشمل البرمجة، الأمن السيبراني، الشبكات، قواعد البيانات، تطوير التطبيقات،
+                وإدارة الأنظمة. مناسب للطلاب المهتمين بالتقنية والتحليل.
+            </p>
+        </div>
+
+        <div class="major-card">
+            <i class="fa-solid fa-hotel"></i>
+            <h3>الضيافة الفندقية</h3>
+            <p>
+                يهتم بمهارات خدمة العملاء، إدارة الفنادق، إعداد الطعام والشراب،
+                ومعايير الجودة العالمية. يؤهل للعمل في الفنادق والمنتجعات.
+            </p>
+        </div>
+
+        <div class="major-card">
+            <i class="fa-solid fa-palette"></i>
+            <h3>التصميم الإبداعي</h3>
+            <p>
+                يشمل تصميم الجرافيك، الموشن جرافيك، إنتاج الفيديو، صناعة المحتوى
+                الإبداعي، والتصوير الاحترافي.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ====================== مستويات BTEC ======================= -->
+<section class="section">
+    <h2 class="section-title">مستويات <span>BTEC</span></h2>
+
+    <div class="levels-grid">
+
+        <div class="level-box">
+            <h3>Level 1</h3>
+            <p>مستوى تأسيسي لبناء المهارات الأساسية التقنية والمهنية.</p>
+        </div>
+
+        <div class="level-box">
+            <h3>Level 2</h3>
+            <p>مستوى متوسط يؤهل الطالب للوظائف المبدئية أو التدريب المتقدم.</p>
+        </div>
+
+        <div class="level-box">
+            <h3>Level 3</h3>
+            <p>أعلى مستوى مدرسي، يؤهل الطالب للالتحاق بالجامعات الدولية.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ====================== التقييم ======================= -->
+<section class="section">
+    <h2 class="section-title">كيف يتم <span>تقييم</span> الطالب؟</h2>
+
+    <ul class="faq-list">
+        <li><i class="fa-solid fa-check"></i> مهام عملية (Assignments)</li>
+        <li><i class="fa-solid fa-check"></i> مشاريع تطبيقية</li>
+        <li><i class="fa-solid fa-check"></i> عروض تقديمية</li>
+        <li><i class="fa-solid fa-check"></i> أعمال فردية وجماعية</li>
+        <li><i class="fa-solid fa-check"></i> تقييم مستمر بدون امتحان نهائي</li>
+    </ul>
+</section>
+
+<!-- ====================== أمثلة مشاريع ======================= -->
+<section class="section">
+    <h2 class="section-title">أمثلة على <span>مشاريع</span> BTEC</h2>
+
+    <div class="projects-grid">
+        <div class="project-card">إنشاء موقع إلكتروني كامل</div>
+        <div class="project-card">تصميم نظام قواعد بيانات</div>
+        <div class="project-card">فيديو ترويجي احترافي</div>
+        <div class="project-card">محاكاة استقبال فندقي</div>
+        <div class="project-card">إعداد قوائم طعام فندقية</div>
+        <div class="project-card">تصميم شعار وبروفايل لشركة</div>
+    </div>
+</section>
+
+
+<!-- ====================== الفوتر ======================= -->
+<footer class="main-footer">
+    <div class="container footer-inner">
+        <div>© <span id="year"></span> مدرسة وادي موسى الثانوية الشاملة للبنين</div>
+        <div class="footer-dev">تطوير بواسطة <strong>المهندس ثائر محمد السلامين</strong></div>
+    </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/dark-mode.js"></script>
+<script>
+    // Smooth scroll للروابط الداخلية
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", function (e) {
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: target.offsetTop - 90,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // سلايدر صور الهيرو - يتغير كل 5 ثواني
+    let btecSliderIndex = 0;
+    const btecSlides = document.querySelectorAll(".btec-hero-slider .btec-slide");
+
+    function switchBtecBackground() {
+        if (btecSlides.length === 0) return;
+        
+        btecSlides.forEach((slide, i) => {
+            if (i === btecSliderIndex) {
+                slide.classList.add("active");
+            } else {
+                slide.classList.remove("active");
+            }
+        });
+
+        btecSliderIndex = (btecSliderIndex + 1) % btecSlides.length;
+    }
+
+    // تشغيل السلايدر كل 5 ثواني
+    if (btecSlides.length > 0) {
+        setInterval(switchBtecBackground, 5000);
+    }
+
+    // تأثير البطاقات الطافية - تتبع الماوس/الإصبع
+    const cards = document.querySelectorAll('.info-card, .major-card, .level-box, .project-card');
+    
+    cards.forEach(card => {
+        let isActive = false;
+        let rect = card.getBoundingClientRect();
+        let cardCenterX = rect.left + rect.width / 2;
+        let cardCenterY = rect.top + rect.height / 2;
+
+        // للماوس
+        card.addEventListener('mouseenter', (e) => {
+            isActive = true;
+            card.classList.add('active');
+        });
+
+        card.addEventListener('mousemove', (e) => {
+            if (isActive) {
+                rect = card.getBoundingClientRect();
+                cardCenterX = rect.left + rect.width / 2;
+                cardCenterY = rect.top + rect.height / 2;
+                
+                const mouseX = e.clientX;
+                const mouseY = e.clientY;
+                
+                const deltaX = (mouseX - cardCenterX) / 10;
+                const deltaY = (mouseY - cardCenterY) / 10;
+                
+                // تطبيق الحركة مع حدود
+                const maxMove = 20;
+                const moveX = Math.max(-maxMove, Math.min(maxMove, deltaX));
+                const moveY = Math.max(-maxMove, Math.min(maxMove, deltaY));
+                
+                card.style.transform = `translate(${moveX}px, ${moveY - 15}px) scale(1.02)`;
+            }
+        });
+
+        card.addEventListener('mouseleave', () => {
+            isActive = false;
+            card.classList.remove('active');
+            card.style.transform = '';
+        });
+
+        // للهاتف (touch)
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        card.addEventListener('touchstart', (e) => {
+            isActive = true;
+            card.classList.add('active');
+            const touch = e.touches[0];
+            touchStartX = touch.clientX;
+            touchStartY = touch.clientY;
+            rect = card.getBoundingClientRect();
+            cardCenterX = rect.left + rect.width / 2;
+            cardCenterY = rect.top + rect.height / 2;
+        });
+
+        card.addEventListener('touchmove', (e) => {
+            if (isActive) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                const deltaX = (touch.clientX - touchStartX) / 8;
+                const deltaY = (touch.clientY - touchStartY) / 8;
+                
+                // تطبيق الحركة مع حدود
+                const maxMove = 25;
+                const moveX = Math.max(-maxMove, Math.min(maxMove, deltaX));
+                const moveY = Math.max(-maxMove, Math.min(maxMove, deltaY));
+                
+                card.style.transform = `translate(${moveX}px, ${moveY - 15}px) scale(1.02)`;
+            }
+        });
+
+        card.addEventListener('touchend', () => {
+            isActive = false;
+            card.classList.remove('active');
+            card.style.transform = '';
+        });
+
+        card.addEventListener('touchcancel', () => {
+            isActive = false;
+            card.classList.remove('active');
+            card.style.transform = '';
+        });
+    });
+</script>
+
+</body>
+</html>

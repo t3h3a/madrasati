@@ -1,0 +1,202 @@
+/* =========================
+   وضع داكن/فاتح (Dark/Light Mode)
+========================= */
+
+/* متغيرات الوضع الفاتح */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f7fa;
+    --bg-tertiary: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-color: rgba(0,0,0,0.08);
+    --shadow: rgba(0,0,0,0.05);
+    --header-bg: rgba(255,255,255,0.90);
+}
+
+/* متغيرات الوضع الداكن */
+[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255,255,255,0.1);
+    --shadow: rgba(0,0,0,0.3);
+    --header-bg: rgba(15,23,42,0.95);
+}
+
+/* تطبيق الألوان على body */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* زر التبديل */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-secondary);
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    position: absolute;
+}
+
+/* أنيميشن الشمس */
+.theme-toggle .fa-sun {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    animation: sunRotate 3s linear infinite;
+}
+
+[data-theme="dark"] .theme-toggle .fa-sun {
+    transform: rotate(90deg) scale(0);
+    opacity: 0;
+    animation: none;
+}
+
+/* أنيميشن القمر */
+.theme-toggle .fa-moon {
+    transform: rotate(-90deg) scale(0);
+    opacity: 0;
+    animation: none;
+}
+
+[data-theme="dark"] .theme-toggle .fa-moon {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    animation: moonRotate 3s linear infinite;
+}
+
+@keyframes sunRotate {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes moonRotate {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(-180deg) scale(1.1); }
+    100% { transform: rotate(-360deg) scale(1); }
+}
+
+/* تعديل الهيدر */
+.main-header {
+    background: var(--header-bg) !important;
+    border-bottom-color: var(--border-color) !important;
+}
+
+.brand-top {
+    color: var(--text-primary) !important;
+}
+
+.brand-sub {
+    color: var(--text-secondary) !important;
+}
+
+.main-nav a {
+    color: var(--text-secondary) !important;
+}
+
+.main-nav a:hover {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+}
+
+.main-nav a.active {
+    background: #2563eb !important;
+    color: #fff !important;
+}
+
+.nav-toggle {
+    color: var(--text-primary) !important;
+}
+
+/* تعديل الفوتر */
+.main-footer {
+    background: var(--bg-secondary) !important;
+    color: var(--text-secondary) !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+
+/* تعديل البطاقات */
+.feature-card,
+.info-card,
+.major-card,
+.level-box,
+.project-card,
+.gallery-card,
+.social-card {
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: 0 6px 20px var(--shadow) !important;
+}
+
+/* تعديل النصوص */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+p {
+    color: var(--text-secondary) !important;
+}
+
+/* تعديل الحقول */
+input, textarea, select {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* تعديل الأزرار */
+.btn-primary,
+.btn-ghost,
+.hero-btn {
+    transition: all 0.3s ease;
+}
+
+/* تعديل صفحة BTEC */
+.btec-hero .overlay {
+    background: rgba(0,0,0,0.55) !important;
+}
+
+[data-theme="dark"] .btec-hero .overlay {
+    background: rgba(0,0,0,0.7) !important;
+}
+
+/* تعديل صفحة المعرض */
+.gallery-section {
+    background: var(--bg-primary) !important;
+}
+
+/* تعديل صفحة المساعد الذكي */
+[data-theme="dark"] .ai-bg {
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .ai-chat-container {
+    background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(15,23,42,0.95)) !important;
+}
+
