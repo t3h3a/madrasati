@@ -152,6 +152,7 @@ body {
     font-size: 3.1rem;
     font-weight: 800;
     line-height: 1.5;
+    color: #ffffff;
 }
 
 .hero-content h1 span {
@@ -162,7 +163,7 @@ body {
     max-width: 700px;
     margin: 18px auto;
     font-size: 1.1rem;
-    color: #ddd;
+    color: #e5e7eb;
 }
 
 .hero-buttons {
@@ -256,18 +257,21 @@ body {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 15px;
+    color: #0f172a;
 }
 
 .section-achievements .ach-text p {
     line-height: 1.9;
     font-size: 1.05rem;
     margin-bottom: 18px;
+    color: #334155;
 }
 
 .section-achievements .stat-line {
     font-size: 1.2rem;
     margin-bottom: 10px;
     font-weight: 600;
+    color: #0f172a;
 }
 
 

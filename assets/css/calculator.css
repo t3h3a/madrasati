@@ -126,6 +126,7 @@
     border: 1px solid var(--border);
     padding: 20px;
     box-shadow: 0 15px 30px rgba(15,23,42,0.04);
+    color: #0f172a;
 }
 
 .info-card h3 {
@@ -153,6 +154,69 @@
     color: #fff;
 }
 
+.info-card.gradient ul {
+    color: rgba(255,255,255,0.9);
+}
+
+/* استثناء بطاقة سلم التقديرات حتى يكون النص داكن في النهار */
+.info-card.gradient.grade-scale-card,
+.info-card.gradient.grade-scale-card h3,
+.info-card.gradient.grade-scale-card span,
+.info-card.gradient.grade-scale-card ul,
+.info-card.gradient.grade-scale-card li {
+    color: #0f172a !important;
+}
+
+/* بطاقة سلم التقديرات – ظل متحرك جذاب */
+.info-card.grade-scale-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border: none;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+.info-card.grade-scale-card h3,
+.info-card.grade-scale-card ul,
+.info-card.grade-scale-card li,
+.info-card.grade-scale-card span,
+.info-card.grade-scale-card .grade-scale span {
+    color: #0f172a !important;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+.info-card.grade-scale-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(
+        from 0deg,
+        rgba(37, 99, 235, 0.95),
+        rgba(14, 165, 233, 0.85),
+        rgba(37, 99, 235, 0.95)
+    );
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: spinBorder 6s linear infinite;
+    z-index: 0;
+}
+
+.info-card.grade-scale-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes spinBorder {
+    to { transform: rotate(360deg); }
+}
+
 .grade-scale {
     display: flex;
     flex-direction: column;
@@ -163,6 +227,7 @@
     background: rgba(255,255,255,0.15);
     padding: 8px 12px;
     border-radius: 10px;
+    color: inherit;
 }
 
 .tracks-column {
@@ -328,6 +393,7 @@
 .shared-row strong {
     display: block;
     font-size: 1.1rem;
+    color: #0f172a;
 }
 
 .shared-row small {

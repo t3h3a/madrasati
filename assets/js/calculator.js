@@ -24,7 +24,7 @@ const gradeOptions = [
     { value: 100, label: "D - Distinction (100)" },
     { value: 80, label: "M - Merit (80)" },
     { value: 60, label: "P - Pass (60)" },
-    { value: 0, label: "F - Fail (0)" }
+    { value: 0, label: "U - Unclassified (0)" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

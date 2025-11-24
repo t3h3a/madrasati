@@ -1,11 +1,45 @@
 /* ---------------------------------------------
    الأساسيات العامة
 --------------------------------------------- */
+:root {
+    --accent-orange: #ff9b4d;          /* برتقالي أفتح للاستخدامات العامة */
+    --accent-orange-strong: #ff7a1a;   /* برتقالي متوسط */
+    --accent-blue: #1e88ff;            /* أزرق واضح */
+    --accent-blue-strong: #0f5ad7;     /* أزرق أعمق */
+    --kw-bg-orange: rgba(255, 138, 61, 0.14);
+    --kw-bg-blue: rgba(30, 136, 255, 0.14);
+    --kw-border: rgba(0, 0, 0, 0.05);
+}
+
+/* تمييز كلمات العلامات التجارية - يعمل في الوضعين */
+.kw-btec,
+.kw-pearson {
+    font-weight: 800;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    display: inline;
+}
+
+.kw-btec {
+    color: var(--accent-orange) !important;
+}
+
+.kw-pearson {
+    color: var(--accent-blue) !important;
+}
+
+/* بتيك برتقالي غامق */
+.kw-btec {
+    color: #d85b00 !important;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Tajawal", sans-serif;
-    background: #f5f7fa;
+    background: linear-gradient(180deg, #f7f9ff 0%, #eef2ff 100%);
     color: #0f172a;
 }
 

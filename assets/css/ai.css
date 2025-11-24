@@ -8,8 +8,8 @@
     --accent-soft: rgba(249, 115, 22, 0.14);
     --primary: #3b82f6;            /* أزرق */
     --primary-soft: rgba(59, 130, 246, 0.12);
-    --text-main: #e5e7eb;
-    --text-muted: #9ca3af;
+    --text-main: #f8fafc;          /* نص أبيض أوضح */
+    --text-muted: #cbd5e1;         /* نص ثانوي أفتح */
     --radius-lg: 24px;
     --radius-md: 18px;
     --shadow-strong: 0 26px 80px rgba(15, 23, 42, 0.9);
@@ -198,6 +198,20 @@ body {
     margin: 0;
     font-size: clamp(0.85rem, 1vw, 0.95rem);
     color: var(--text-muted);
+}
+
+/* قفل ألوان النص داخل تجربة المساعد حتى لا تتأثر بالثيم العام */
+.ai-chat-container,
+.ai-chat-container h1,
+.ai-chat-container h2,
+.ai-chat-container h3,
+.ai-chat-container p {
+    color: var(--text-main) !important;
+}
+
+.ai-chat-container .message.user,
+.ai-chat-container .message.bot {
+    color: inherit !important;
 }
 
 /* =========================

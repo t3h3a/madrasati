@@ -1,6 +1,32 @@
 /* ----------------------------------------------------
-   الهيدر الرئيسي (Main Header)
+   إعدادات عامة للخط
 ---------------------------------------------------- */
+:root {
+    --font-size-small: 15px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+    --font-size-xlarge: 20px;
+}
+
+html {
+    font-size: var(--font-size-medium);
+}
+
+html[data-font-size="small"] {
+    font-size: var(--font-size-small);
+}
+
+html[data-font-size="large"] {
+    font-size: var(--font-size-large);
+}
+
+html[data-font-size="xlarge"] {
+    font-size: var(--font-size-xlarge);
+}
+
+/* ----------------------------------------------------
+   الهيدر الرئيسي (Main Header)
+----------------------------------------------------- */
 
 .main-header {
     position: fixed;
